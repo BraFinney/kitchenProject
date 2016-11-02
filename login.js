@@ -137,7 +137,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 		window.location.href = 'proj/HTML/price.html'
 	} else {
 		console.log('not logged in')
-
+		
 		//please login
 		//show log in button
 
@@ -147,7 +147,4 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
 
 
-// btnLogOut.addEventListener('click', e =>{
-// 	firebase.auth().signOut()
-// })
 
