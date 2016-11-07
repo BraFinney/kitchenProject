@@ -27,37 +27,51 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
 
 
-var btnLogOut = document.getElementById('logOut');
 
-btnLogOut.addEventListener('click', e =>{
-	firebase.auth().signOut()
-})
+$(document).ready(function (){
+	var $countB = 0;
+	var $countL = 0;
+	var $countD = 0;
 
+	$('#logOut').click(function (){
+		firebase.auth().signOut()
 
+	})
 
+	$('.yesB').click(function (){	
+		$(this).css({'background-color' : 'red'})
+		$countB += 1
+		if ($countB == 3) {
 
-function select (idSelected, idUnselected){	
-	document.getElementById(idSelected).style.background='red'; 
-	document.getElementById(idUnselected).style.background='white';
-	document.getElementById(idUnselected).disabled = true;
+			$("#breakfastBox").hide();
+
+		}
+	})
+
+	$('.yesL').click(function (){	
+		$(this).css({'background-color' : 'red'})
+		$countL += 1
+		if ($countL == 5) {
+
+			$("#lunchBox").hide();
+
+		}
+	})
+
+	$('.yesD').click(function (){	
+		$(this).css({'background-color' : 'red'})
+		$countD += 1
+		if ($countD == 5) {
+
+			$("#dinnerBox").hide();
+
+		}
+	})
+
 	
-	if (idSelected.slice(-3) === "Yes") {
-		//obj[idSelected.slice(0,-3)] += 1
-		prompt("you chose Yes");
-
-	}else{
-
-		//obj[idSelected.slice(0,-3)] += 0 
-		prompt("you chose No");
-	}
-}
 
 
-function changeYourMind (cymId, idSelected, idUnselected) {
-	document.getElementById(idSelected).style.background='white'; 
-	document.getElementById(idUnselected).style.background='white';
-}
+})//end of 
 
-function misplace () {
-	document.getElementById('coffcoff').style.visibilty = 'hidden';
-}
+
+

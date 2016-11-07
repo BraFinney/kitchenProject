@@ -16,3 +16,10 @@ background-color: blue;
 .newbie{
 	background:url(../photos/jest.jpg)
 }
+
+.chosen {
+	background: red;
+    }
+.unchosen{
+	background:white;
+}    
